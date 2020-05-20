@@ -1,2 +1,2 @@
-# Unit1-random-quote-generator
+# Treehouse Tech Degree Unit 1 Project: Random Quote Generator
  Random Quote Generator Project
