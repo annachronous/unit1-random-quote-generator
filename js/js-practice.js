@@ -7,6 +7,10 @@ Student: Anna Gallishaw
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+//var message = "";
+//var red;
+//var green;
+//var blue;
 
 /*** 
  * `quotes` array 
@@ -61,73 +65,20 @@ var quotes = [
     }
 ];
 
-/*Checked my first step - the quotes array - here.*/
 
-//console.log(quotes);
-
+console.log(quotes);
 /***
  * `getRandomQuote` function
 ***/
 
-function getRandomQuote() {
-  // 1. Create a variable that generates a random number
-  // between zero and the last index in the `quotes` array
-
-    var randomNumber = getRandomNumber(quotes.length);
+//function getRandomQuote () {
+    //return Math.floor(Math.random() * quotes.length);
     
-  // 2. Use the random number variable and bracket notation 
-  // to grab a random object from the `quotes` array, and 
-  // store it in a variable
-
-  // 3. Return the variable storing the random quote object
-
-    return quotes[randomNumber];
-
-}
-/*Checked my second step - the getRandomQuotes function - here.*/
-
-//console.log(getRandomQuote);
 
 /***
  * `printQuote` function
 ***/
 
-function printQuote() {
-  // 1. Create a variable that calls the getRandomQuote() 
-  // function
-    
-var randomQuote = getRandomQuote();
-    
-  // 2. Create a variable that initiates your HTML string with 
-  // the first two <p></p> elements, their classNames, 
-  // and the quote and source properties, but leave off 
-  // the second closing `</p>` tag for now
-
-  // 3. Use an if statement to check if the citation property 
-  // exists, and if it does, concatenate a <span></span> 
-  // element, appropriate className, and citation property 
-  // to the HTML string
-
-  // 4. Use an if statement to check of the year property exists, 
-  // and if it does, concatenate a <span></span> element, 
-  // appropriate className, and year property to the HTML 
-  //string
-
-  // 5. After the two if statements, concatenate the closing </p> 
-  // tag to the HTML string
-
-  // 6. set the innerHTML of the quote-box div to equal the 
-  // complete HTML string
-}
-
-//**TO DO NEXT**got this from jeffrey meesters github to see how it works...still unsure. Next steps: figure out how to get the element ID to update with the random quotes. reread how to use console log method since I don't seem to be grasping this very basic thing. reread random generator documentation and assemble a color changing background. why aren't the quotes I chose updating on the page? Is this a getElementID thing? <-- yes, it's in the project warmup it's the final step.
-
-/*function printQuote() {
-    // get a randomQuote object and store it in the randomQuote variable
-    var randomQuote = getRandomQuote();
-    return randomQuote;
-}
-*/
 
 /***
  * click event listener for the print quote button
