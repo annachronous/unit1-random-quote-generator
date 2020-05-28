@@ -83,11 +83,11 @@ function getRandomQuote() {
   // to grab a random object from the `quotes` array, and 
   // store it in a variable
     
-    randomQuote ["quotes"]
+    quotes[randomQuote]
 
   // 3. Return the variable storing the random quote object
 
-    return quotes[randomNumber];
+    return quotes[randomQuote];
 
 }
 /*Checked my second step - the getRandomQuotes function - here.*/
@@ -102,7 +102,7 @@ function printQuote() {
   // 1. Create a variable that calls the getRandomQuote() 
   // function
     
-var randomQuote = getRandomQuote();
+ let randomQuote = getRandomQuote();
     
   // 2. Create a variable that initiates your HTML string with 
   // the first two <p></p> elements, their classNames, 
