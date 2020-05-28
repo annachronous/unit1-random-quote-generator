@@ -11,6 +11,9 @@ Student: Anna Gallishaw
 /*** 
  * `quotes` array 
 ***/
+
+//TODO: remove some years and citations to achieve the grading rubric
+
 var quotes = [
     {
         quote: "Shared pain is lessened; shared joy, increased—thus do we refute entropy.",
@@ -70,14 +73,17 @@ var quotes = [
 ***/
 
 function getRandomQuote() {
+    
   // 1. Create a variable that generates a random number
   // between zero and the last index in the `quotes` array
 
-    var randomNumber = getRandomNumber(quotes.length);
+    var randomQuote = Math.floor(Math.random() * quotes.length);
     
   // 2. Use the random number variable and bracket notation 
   // to grab a random object from the `quotes` array, and 
   // store it in a variable
+    
+    randomQuote ["quotes"]
 
   // 3. Return the variable storing the random quote object
 
