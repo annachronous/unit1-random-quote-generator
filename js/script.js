@@ -12,7 +12,9 @@ Student: Anna Gallishaw
  * `quotes` array 
 ***/
 
-//TODO: remove some years and citations to achieve the grading rubric
+//TODO: re-write functions as arrow functions
+//      change var to let?
+//      add color changer
 
 var quotes = [
     {
@@ -42,7 +44,6 @@ var quotes = [
     {
         quote: "I don't understand ambition...the highest delight in life [is]- to discover that you have capacities that surprise even you. So, ambition seems like a little side alley, an error in judgement, or a substitution of something trivial for what ought to be your real goal - self-surprise.",
         source: "Peter Altenberg",
-        year: "unknown year",
         citation: "Alexander King Presents Peter Altenberg's Evocations of Love",
         tags: "life goals"
     },
@@ -50,7 +51,6 @@ var quotes = [
     {
         quote: "Start cultivating a relationship with poverty... I am not, mind you, against your possessing [riches], but I want to ensure that you possess them without tremors; and this you will only achieve in one way, by convincing yourself that you can live a happy life even without them, and by always regarding them as being on the point of vanishing.",
         source: "Seneca the Younger",
-        year: "AD 65",
         citation: "Epistulae Morales ad Lucilium",
         tags: "wealth"
     },
@@ -83,57 +83,64 @@ function getRandomQuote() {
   // to grab a random object from the `quotes` array, and 
   // store it in a variable
     
-    quotes[randomQuote]
+    quotes[randomQuote];
 
   // 3. Return the variable storing the random quote object
 
     return quotes[randomQuote];
-
 }
 /*Checked my second step - the getRandomQuotes function - here.*/
 
-//console.log(getRandomQuote);
+// console.log(getRandomQuote);
 
 /***
  * `printQuote` function
 ***/
 
 function printQuote() {
+    
   // 1. Create a variable that calls the getRandomQuote() 
   // function
     
- let randomQuote = getRandomQuote();
+    var randomQuote = getRandomQuote();
     
   // 2. Create a variable that initiates your HTML string with 
   // the first two <p></p> elements, their classNames, 
   // and the quote and source properties, but leave off 
   // the second closing `</p>` tag for now
-
+    
+    var quoteHTML = '
+        <p class = "quote">${randomQuote}</p>
+        <p class = "source">${randomQuote.source}
+    '
+    
   // 3. Use an if statement to check if the citation property 
   // exists, and if it does, concatenate a <span></span> 
   // element, appropriate className, and citation property 
   // to the HTML string
-
+    
+    if ( randomQuote.citation ) {
+        quoteHTML += '<span class = "citation">${randomQuote.citation}</span>';
+        }
+    
   // 4. Use an if statement to check of the year property exists, 
   // and if it does, concatenate a <span></span> element, 
   // appropriate className, and year property to the HTML 
   //string
+    
+    if ( randomQuote.year ) {
+        quoteHTML += '<span class = "year">${randomQuote.year}</span>';
+        }
 
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string
+    
+    quoteHTML += '</p>'
 
   // 6. set the innerHTML of the quote-box div to equal the 
   // complete HTML string
+    document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
 }
-
-//**TO DO NEXT**got this from jeffrey meesters github to see how it works...still unsure. Next steps: figure out how to get the element ID to update with the random quotes. reread how to use console log method since I don't seem to be grasping this very basic thing. reread random generator documentation and assemble a color changing background. why aren't the quotes I chose updating on the page? Is this a getElementID thing? <-- yes, it's in the project warmup it's the final step.
-
-/*function printQuote() {
-    // get a randomQuote object and store it in the randomQuote variable
-    var randomQuote = getRandomQuote();
-    return randomQuote;
-}
-*/
 
 /***
  * click event listener for the print quote button
