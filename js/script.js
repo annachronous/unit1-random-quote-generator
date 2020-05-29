@@ -8,13 +8,16 @@ Student: Anna Gallishaw
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
+//***TO DO***//
+
+//      re-write functions as arrow functions
+//      change var to let?
+//      add color changer
+//      add coding comments
+
 /*** 
  * `quotes` array 
 ***/
-
-//TODO: re-write functions as arrow functions
-//      change var to let?
-//      add color changer
 
 var quotes = [
     {
