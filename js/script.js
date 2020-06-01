@@ -11,6 +11,8 @@ Student: Anna Gallishaw
 //***TO DO***//
 
 //      re-write functions as arrow functions
+//      add if statement for tags
+//      change var to let?
 //      add color changer
 //      add coding comments
 
