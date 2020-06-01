@@ -3,15 +3,14 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 Student: Anna Gallishaw
 ******************************************/
-
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 //***TO DO***//
-
 //      add color changer
 //      add coding comments
+//      all quotes properties except the quote itself are appearing on the same line without any spaces between year and tags - how //      to fix this?
+
 
 /*** 
  * `quotes` array 
@@ -71,61 +70,89 @@ var quotes = [
 
 //console.log(quotes);
 
+/*** 
+ * `colors` array 
+***/
+
+var colors = [
+    
+    'blue',
+    'green',
+    'yellow',
+    'red',
+    'purple',
+    'orange'
+    
+];
+
 /***
  * `getRandomQuote` function
 ***/
 
 function getRandomQuote() {
-
-    var randomQutoe = Math.floor(Math.random() * quotes.length);
-
-    return quotes[getRandomQuote];
-
+    
+    "use strict";
+    
+    var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    
+    return randomQuote;
 }
+
 /*Checked my second step - the getRandomQuotes function - here.*/
 
 // console.log(getRandomQuote);
+
+/***
+ * `getRandomColor` function
+***/
+
+function getRandomColor() {
+    
+    "use strict";
+    
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    return randomColor;
+}
 
 /***
  * `printQuote` function
 ***/
 
 function printQuote() {
-
-    var randomQuote = getRandomQuote();
+    
+    "use strict";
+    
+    var currentColor = getRandomColor();
+    var currentQuote = getRandomQuote();
     
     var quoteHTML = `
-        <p class = "quote">${randomQuote.quote}</p>
-        <p class = "source">${randomQuote.source}
+        <p class="quote">${currentQuote.quote}</p>
+        <p class="source">${currentQuote.source}
     `
     
-    if ( randomQuote.citation ) {
-        quoteHTML += `<span class = "citation">${randomQuote.citation}</span>`;
-        }
-    
-    if ( randomQuote.year ) {
-        quoteHTML += `<span class = "year">${randomQuote.year}</span>`;
-        }
-    
-        if ( randomQuote.tags ) {
-        quoteHTML += `<span class = "tags">${randomQuote.tags}</span>`;
-        }
+        if ( currentQuote.citation ) {
+            quoteHTML += `<span class = "citation">${currentQuote.citation}</span>`;
+            }
 
-  // 5. After the two if statements, concatenate the closing </p> 
-  // tag to the HTML string
+        if ( currentQuote.year ) {
+            quoteHTML += `<span class = "year">${currentQuote.year}</span>`;
+            }
+
+        if ( currentQuote.tags ) {
+            quoteHTML += `<span class = "tags">${currentQuote.tags}</span>`;
+            }
     
-    quoteHTML += `</p>`
+    document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
+    
+    quoteHTML += `</p>`;
+    
+    return quoteHTML;
     
 };
-
-  // 6. set the innerHTML of the quote-box div to equal the 
-  // complete HTML string
-    document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
-
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
