@@ -11,7 +11,6 @@ Student: Anna Gallishaw
 //***TO DO***//
 
 //      re-write functions as arrow functions
-//      change var to let?
 //      add color changer
 //      add coding comments
 
@@ -19,7 +18,8 @@ Student: Anna Gallishaw
  * `quotes` array 
 ***/
 
-var quotes = [
+let quotes = [
+    
     {
         quote: "Shared pain is lessened; shared joy, increased—thus do we refute entropy.",
         source: "Spider Robinson",
@@ -55,7 +55,7 @@ var quotes = [
         quote: "Start cultivating a relationship with poverty... I am not, mind you, against your possessing [riches], but I want to ensure that you possess them without tremors; and this you will only achieve in one way, by convincing yourself that you can live a happy life even without them, and by always regarding them as being on the point of vanishing.",
         source: "Seneca the Younger",
         citation: "Epistulae Morales ad Lucilium",
-        tags: "wealth"
+        tags: "wealth, contentment"
     },
     
     {
@@ -63,8 +63,9 @@ var quotes = [
         source: "Louise Dickinson Rich",
         year: 1942,
         citation: "We Took to the Woods",
-        tags: "ingenuity"
+        tags: "ingenuity, life goals"
     }
+    
 ];
 
 /*Checked my first step - the quotes array - here.*/
@@ -75,23 +76,13 @@ var quotes = [
  * `getRandomQuote` function
 ***/
 
-function getRandomQuote() {
+let getRandomQuote() = () => quotes[Math.floor(Math.random() * quotes.length)]{
     
-  // 1. Create a variable that generates a random number
-  // between zero and the last index in the `quotes` array
+ // How do I write the return statement here? Should I even have it anymore now that I wrote it as an arrow function? Read up on syntax. 
 
-    var randomQuote = Math.floor(Math.random() * quotes.length);
-    
-  // 2. Use the random number variable and bracket notation 
-  // to grab a random object from the `quotes` array, and 
-  // store it in a variable
-    
-    quotes[randomQuote];
+return quotes[getRandomQuote];
 
-  // 3. Return the variable storing the random quote object
-
-    return quotes[randomQuote];
-}
+};
 /*Checked my second step - the getRandomQuotes function - here.*/
 
 // console.log(getRandomQuote);
@@ -100,50 +91,38 @@ function getRandomQuote() {
  * `printQuote` function
 ***/
 
-function printQuote() {
+let printQuote => [getRandomQuote]{
+
+//All these if statements should be inside brackets - check arrow function syntax again. 
     
-  // 1. Create a variable that calls the getRandomQuote() 
-  // function
-    
-    var randomQuote = getRandomQuote();
-    
-  // 2. Create a variable that initiates your HTML string with 
-  // the first two <p></p> elements, their classNames, 
-  // and the quote and source properties, but leave off 
-  // the second closing `</p>` tag for now
-    
-    var quoteHTML = '
-        <p class = "quote">${randomQuote}</p>
+    let quoteHTML = `
+        <p class = "quote">${randomQuote.quote}</p>
         <p class = "source">${randomQuote.source}
-    '
-    
-  // 3. Use an if statement to check if the citation property 
-  // exists, and if it does, concatenate a <span></span> 
-  // element, appropriate className, and citation property 
-  // to the HTML string
+    `
     
     if ( randomQuote.citation ) {
-        quoteHTML += '<span class = "citation">${randomQuote.citation}</span>';
+        quoteHTML += `<span class = "citation">${randomQuote.citation}</span>`;
         }
     
-  // 4. Use an if statement to check of the year property exists, 
-  // and if it does, concatenate a <span></span> element, 
-  // appropriate className, and year property to the HTML 
-  //string
-    
     if ( randomQuote.year ) {
-        quoteHTML += '<span class = "year">${randomQuote.year}</span>';
+        quoteHTML += `<span class = "year">${randomQuote.year}</span>`;
+        }
+    
+        if ( randomQuote.tags ) {
+        quoteHTML += `<span class = "tags">${randomQuote.tags}</span>`;
         }
 
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string
     
     quoteHTML += '</p>'
+    
+};
 
   // 6. set the innerHTML of the quote-box div to equal the 
   // complete HTML string
     document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
-}
+
 
 /***
  * click event listener for the print quote button
