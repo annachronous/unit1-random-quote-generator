@@ -19,7 +19,7 @@ Student: Anna Gallishaw
  * `quotes` array 
 ***/
 
-let quotes = [
+var quotes = [
     
     {
         quote: "Shared pain is lessened; shared joy, increased—thus do we refute entropy.",
@@ -77,13 +77,13 @@ let quotes = [
  * `getRandomQuote` function
 ***/
 
-let getRandomQuote() = () => quotes[Math.floor(Math.random() * quotes.length)]{
-    
- // How do I write the return statement here? Should I even have it anymore now that I wrote it as an arrow function? Read up on syntax. 
+function getRandomQuote() {
 
-return quotes[getRandomQuote];
+    var randomQutoe = Math.floor(Math.random() * quotes.length);
 
-};
+    return quotes[getRandomQuote];
+
+}
 /*Checked my second step - the getRandomQuotes function - here.*/
 
 // console.log(getRandomQuote);
@@ -92,11 +92,11 @@ return quotes[getRandomQuote];
  * `printQuote` function
 ***/
 
-let printQuote => [getRandomQuote]{
+function printQuote() {
 
-//All these if statements should be inside brackets - check arrow function syntax again. 
+    var randomQuote = getRandomQuote();
     
-    let quoteHTML = `
+    var quoteHTML = `
         <p class = "quote">${randomQuote.quote}</p>
         <p class = "source">${randomQuote.source}
     `
@@ -116,7 +116,7 @@ let printQuote => [getRandomQuote]{
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string
     
-    quoteHTML += '</p>'
+    quoteHTML += `</p>`
     
 };
 
