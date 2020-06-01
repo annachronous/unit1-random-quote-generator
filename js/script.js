@@ -76,12 +76,12 @@ var quotes = [
 
 var colors = [
     
-    'blue',
-    'green',
-    'yellow',
-    'red',
-    'purple',
-    'orange'
+    '#ddbc91',
+    '#97acec',
+    '#6d959f',
+    '#6cb169',
+    '#a07a7f',
+    '#317ba0'
     
 ];
 
@@ -148,6 +148,7 @@ function printQuote() {
     quoteHTML += `</p>`;
     
     return quoteHTML;
+    return currentColor;
     
 };
 
