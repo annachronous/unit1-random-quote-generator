@@ -3,19 +3,9 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 Student: Anna Gallishaw
 ******************************************/
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-//***TO DO***//
-//      add color changer
-//      add coding comments
-//      all quotes properties except the quote itself are appearing on the same line without any spaces between year and tags - how 
-//      to fix this?
-
 
 /*** 
- * `quotes` array 
+ * `quotes` array including source, year, citation, and tag properties
 ***/
 
 var quotes = [
@@ -73,7 +63,7 @@ var quotes = [
 //console.log(quotes);
 
 /*** 
- * `colors` array 
+ * `colors` array to supply various background colors for my color changing function
 ***/
 
 var colors = [
@@ -88,7 +78,7 @@ var colors = [
 ];
 
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function - pulls a random quote from the quotes array and returns it to be used in the printQuote function below
 ***/
 
 function getRandomQuote() {
@@ -105,7 +95,7 @@ function getRandomQuote() {
 // console.log(getRandomQuote);
 
 /***
- * `getRandomColor` function
+ * `getRandomColor` function - changes the background color of the index.html every time the "show another quote" button is clicked by a user
 ***/
 
 function getRandomColor() {
@@ -118,7 +108,7 @@ function getRandomColor() {
 }
 
 /***
- * `printQuote` function
+ * `printQuote` function - prints a random quote retrieved by the getRandomQuote function above to the index.html page and changes the background color of the index.html page
 ***/
 
 function printQuote() {
@@ -145,8 +135,17 @@ function printQuote() {
             quoteHTML += `<span class = "tags">${currentQuote.tags}</span>`;
             }
     
+/***
+* Selects the quote-box id in index.html and replaces the content with a new quote selected and returned by the getRandomQuote function above  
+***/
+    
     document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
-    document.body = currentColor;
+    
+/***
+* Selects the body style in index.html and replaces the content with a new color selected and returned by the getRandomColor function above  
+***/
+    
+    document.body.style.backgroundColor = currentColor;
     
     quoteHTML += `</p>`;
     
