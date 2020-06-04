@@ -6,10 +6,12 @@ Student: Anna Gallishaw
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+
 //***TO DO***//
 //      add color changer
 //      add coding comments
-//      all quotes properties except the quote itself are appearing on the same line without any spaces between year and tags - how //      to fix this?
+//      all quotes properties except the quote itself are appearing on the same line without any spaces between year and tags - how 
+//      to fix this?
 
 
 /*** 
@@ -144,6 +146,7 @@ function printQuote() {
             }
     
     document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
+    document.body = currentColor;
     
     quoteHTML += `</p>`;
     
