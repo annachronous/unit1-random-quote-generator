@@ -142,7 +142,7 @@ function printQuote() {
     document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
     
 /***
-* Selects the body style in index.html and replaces the content with a new color selected and returned by the getRandomColor function above  
+* Selects the body style in styles.css and replaces the content with a new color selected and returned by the getRandomColor function above  
 ***/
     
     document.body.style.backgroundColor = currentColor;
