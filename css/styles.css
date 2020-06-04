@@ -117,7 +117,7 @@ h1 {
 
 /* I added this code to give a space between tags*/
 
-.tag:before {
+.tags:before {
   content: ", ";
   font-style: normal;
 }
