@@ -58,24 +58,9 @@ var quotes = [
     
 ];
 
-/*Checked my first step - the quotes array - here.*/
+/*Checked the quotes array here.*/
 
 //console.log(quotes);
-
-/*** 
- * `colors` array to supply various background colors for my color changing function
-***/
-
-var colors = [
-    
-  '#ddbc91',
-  '#97acec',
-  '#6d959f',
-  '#6cb169',
-  '#a07a7f',
-  '#317ba0'
-    
-];
 
 /***
  * `getRandomQuote` function - pulls a random quote from the quotes array and returns it to be used in the printQuote function below
@@ -95,13 +80,14 @@ function getRandomQuote() {
 
 /***
  * `getRandomColor` function - changes the background color of the index.html every time the "show another quote" button is clicked by a user
+ * I used a code snippet I found here: https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
 ***/
 
 function getRandomColor() {
     
   "use strict";
 
-  return colors[Math.floor(Math.random() * colors.length)];
+ return '#'+Math.floor(Math.random()*16777215).toString(16);
 
 }
 
