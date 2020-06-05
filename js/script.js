@@ -142,7 +142,8 @@ function printQuote() {
     document.querySelector( '#quote-box' ).innerHTML = quoteHTML;
     
 /***
-* Selects the body style in styles.css and replaces the content with a new color selected and returned by the getRandomColor function above  
+* Selects the body style in styles.css and replaces the content with a new color selected and returned by the getRandomColor function above. 
+* I learned this via w3schools.com - https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
 ***/
     
     document.body.style.backgroundColor = currentColor;
@@ -153,6 +154,13 @@ function printQuote() {
     return currentColor;
     
 };
+
+/***
+* Set interval method changes background color and quote automatically every ten seconds
+* I learned the syntax for this method here: https://www.w3schools.com/jsref/met_win_setinterval.asp
+***/
+
+setInterval(printQuote, 10000);
 
 /***
  * click event listener for the print quote button
