@@ -85,14 +85,13 @@ function getRandomQuote() {
     
   "use strict";
 
-  var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  return quotes[Math.floor(Math.random() * quotes.length)];
 
-  return randomQuote;
 }
 
-/*Checked my second step - the getRandomQuotes function - here.*/
+/*Checked the getRandomQuotes function here.*/
 
-// console.log(getRandomQuote);
+//console.log(getRandomQuote);
 
 /***
  * `getRandomColor` function - changes the background color of the index.html every time the "show another quote" button is clicked by a user
@@ -102,10 +101,13 @@ function getRandomColor() {
     
   "use strict";
 
-  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  return colors[Math.floor(Math.random() * colors.length)];
 
-  return randomColor;
 }
+
+/*Checked the getRandomColor function here.*/
+
+//console.log(getRandomColor);
 
 /***
  * `printQuote` function - prints a random quote retrieved by the getRandomQuote function above to the index.html page and changes the background color of the index.html page
@@ -115,13 +117,12 @@ function printQuote() {
     
   "use strict";
 
-  var currentColor = getRandomColor();
   var currentQuote = getRandomQuote();
 
   var quoteHTML = `
     <p class="quote">${currentQuote.quote}</p>
     <p class="source">${currentQuote.source}
-  `
+  ` ;
 
     if ( currentQuote.citation ) {
         quoteHTML += `<span class = "citation">${currentQuote.citation}</span>`;
@@ -146,12 +147,11 @@ function printQuote() {
 * I learned this via w3schools.com - https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
 ***/
     
-  document.body.style.backgroundColor = currentColor;
+  document.body.style.backgroundColor = getRandomColor();
 
   quoteHTML += `</p>`;
 
   return quoteHTML;
-  return currentColor;
     
 };
 
